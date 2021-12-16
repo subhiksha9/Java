@@ -1,0 +1,68 @@
+//Write a java program for the following: Assume that the test results of a batch of students are stored in three different classes. Class student stores the name, roll-number and class test stores the marks obtained in six subjects and class result contains the total marks obtained in the test. The class result can inherit the details of the marks obtained in the test and the name, roll number of students through Multi level inheritance.
+import java.util.*;
+class Student
+{
+	Scanner sc=new Scanner(System.in);
+	String name;
+	int roll_no;
+	Student()
+	{
+		System.out.println("Enter name of the student:");
+		name=sc.nextLine();
+		System.out.println("Enter roll number of the student:");
+		roll_no=sc.nextInt();
+	}
+}
+class Test extends Student
+{
+	Scanner s=new Scanner(System.in);
+	double marks[]=new double[6];
+	int i;
+	Test()
+	{
+		super();
+		System.out.println("Enter marks in six subjects:");
+		for(i=0;i<6;i++)
+		{
+			System.out.print("Subject"+(i+1)+":");
+			marks[i]=s.nextDouble();
+		}
+	}
+}
+class Result extends Test
+{
+	double total=0;
+	int i;
+	Result()
+	{
+		super();
+		for(i=0;i<6;i++)
+		{
+			total=total+marks[i];
+		}
+	}
+	void display()
+	{
+		System.out.println("Name: "+name+" , Roll Number : "+roll_no+" , Total Marks : "+total);
+	}
+}
+class StudentDemo
+{
+	public static void main(String args[])
+	{
+		Scanner c=new Scanner(System.in);
+		System.out.println("Enter number of students:");
+		int n=c.nextInt(),i;
+	        Result r[]=new Result[n];
+		for(i=0;i<n;i++)
+		{
+			System.out.println("Student"+(i+1)+":");
+			r[i]=new Result();
+		}
+		for(i=0;i<n;i++)
+		{
+			System.out.println("Student"+(i+1)+": ");
+			r[i].display();
+		}
+	}
+}
