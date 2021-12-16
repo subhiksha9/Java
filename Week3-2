@@ -1,0 +1,51 @@
+//Write a Java program that displays the time in different formats in the form of HH, MM, SS using constructor Overloading.
+class time
+{
+int HH,MM,SS;
+time()
+{
+HH=2;
+MM=3;
+SS=4;
+}
+time(int HH)
+{
+this.HH=HH;
+MM=6;
+SS=7;
+}
+time(int HH,int MM)
+{
+this.HH=HH;
+this.MM=MM;
+SS=10;
+}
+time(int HH,int MM,int SS)
+{
+this.HH=HH;
+this.MM=MM;
+this.SS=SS;
+}
+void display()
+{
+System.out.println("time is "+HH+":"+MM+":"+SS);
+}
+}
+class timee
+{
+public static void main(String args[])
+{
+time T=new time();
+System.out.println("default parameter");
+T.display();
+time T1=new time(5);
+System.out.println("only hour as parameter");
+T1.display();
+time T2=new time(8,9);
+System.out.println("hour and minute as parameters");
+T2.display();
+time T3=new time(11,12,13);
+System.out.println("hour,minute,and seconds as parameters");
+T3.display();
+}
+}
