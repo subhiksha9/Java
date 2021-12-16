@@ -1,0 +1,61 @@
+//
+import java.util.Scanner;
+class employee
+{  String empname;
+   int id;
+   float salary;
+  int nh;
+  void getinfo()
+  {
+     System.out.println("enter name");
+     Scanner sc=new Scanner(System.in);
+     empname=sc.nextLine();
+    System.out.println("enter id");
+    id=sc.nextInt();
+    System.out.println("enter salary");
+    salary=sc.nextFloat();
+    System.out.println("enter no.of hours");
+    nh=sc.nextInt();
+ }
+ void addsal()
+ {
+    if(salary<500)
+    {
+        salary=salary+10;
+    }
+ }
+ void addwork()
+  {
+     if(nh>6)
+    {
+       salary=salary+5*(nh-6);
+    }
+  }
+  void finalsal()
+  {
+     System.out.println("final salary of "+" "+empname+" "+"is"+" " +salary);
+   }
+}
+class lc1
+{
+   public static void main(String args[])
+   {     int i;
+          System.out.println("enter no.of employees");
+          Scanner s=new Scanner(System.in);
+          int n=s.nextInt();
+          employee e[]=new  employee[n];
+          for(i=0;i<n;i++)
+          {
+             e[i]=new employee();
+          }
+          for(i=0;i<n;i++)
+         {
+              e[i].getinfo();
+              e[i].addsal();
+              e[i].addwork();
+              e[i].finalsal();
+         }
+         
+   }
+}
+ 
