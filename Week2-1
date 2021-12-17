@@ -1,0 +1,37 @@
+//Write a java program to demonstarate a static keyword.
+import java.util.*;
+class sample
+{
+static int a=3;
+static int b=a*4;
+static void abc(int x)
+{
+System.out.println("the value of x :");
+System.out.println(x);
+System.out.println("the value of a :");
+System.out.println(a);
+System.out.println("the value of b:");
+System.out.println(b);
+}
+static class nestedsample
+{
+static void method()
+{
+System.out.println("the value  is :");
+System.out.println(a+b);
+}
+}
+}
+class static1
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("enter n value:");
+int n=sc.nextInt();
+System.out.println("the static method in a class");
+sample.abc(n);
+System.out.println("the static nested class method");
+sample.nestedsample.method();
+}
+}
