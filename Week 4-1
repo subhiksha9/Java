@@ -1,4 +1,6 @@
 //Write a java program for the following: Create a class employee which takes input as name, id and designation and create an another class salary which takes input as Basic pay (BP), House Rent Allowance (HRA), Dearness Allowance(DA) and Provident Found (PF) and inherits the members of class employee. Print the Net Pay of each employee using the reademp() in employee class and readslary() , calculatesalary() and displayemp() methods in salary class. (np = bp + hra + da – pf)
+
+
 import java.util.Scanner;
 class employee
 {  String empname;
