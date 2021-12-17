@@ -1,0 +1,55 @@
+//Write a java program to demonstarate a varible and non-variable length arguments.
+
+import java.util.*;
+class Student
+{
+int total;
+float average;
+String name;
+void get(String name)
+{
+	this.name=name;
+	System.out.println("name:"+name);
+}		
+void Total(int ... a)
+{
+for(int i:a)
+{
+	total=total+i;
+}
+average=(float)total/a.length;
+System.out.println("The total score of student is :"+total);
+System.out.println("The Average of student is:"+average);
+}
+}
+class Stu
+{
+public static void main(String args[])
+{
+Student s[]=new Student[5];
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter names of the student");
+String s1=sc.nextLine(),s2=sc.nextLine(),s3=sc.nextLine(),s4=sc.nextLine(),s5=sc.nextLine();
+System.out.println("Student1:");
+s[0]=new Student();
+s[0].get(s1);
+s[0].Total(10,35,23);
+System.out.println("Student2:");
+s[1]=new Student();
+s[1].get(s2);
+s[1].Total(12,17,25);
+System.out.println("Student3:");
+s[2]=new Student();
+s[2].get(s3);
+s[2].Total(24,25,35);
+System.out.println("Student4:");
+s[3]=new Student();
+s[3].get(s4);
+s[3].Total(26,27,19);
+System.out.println("Student5:");
+s[4]=new Student();
+s[4].get(s5);
+s[4].Total(34,35,29);
+}
+}
+		
