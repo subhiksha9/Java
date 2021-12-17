@@ -1,0 +1,44 @@
+//Write a java program to demonstarate this keyword.
+class sample
+{
+int a,b;
+void m()
+{
+this.n();
+System.out.println("is m");
+}
+void n()
+{
+System.out.println("is n");
+}
+sample()
+{
+this(1);
+System.out.println("default");
+}
+sample(int x)
+{
+System.out.println("only one parameter constructor ");
+System.out.println(x);
+}
+sample(int a,int b)
+{
+this();
+this.a=a;
+this.b=b;
+System.out.println("the value of a is:");
+System.out.println(a);
+System.out.println("the value of b is:");
+System.out.println(b);
+}
+}
+class this2
+{ 
+public static void main(String args[])
+{
+sample s=new sample(3,4);
+s.m();
+}
+}
+
+
