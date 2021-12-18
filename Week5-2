@@ -1,4 +1,4 @@
-//ii. Write a program to create a superclass called Figure that stores the dimensions of a two-dimensional object. It also defines a method called area( ) that computes the area of an object. The program derives two subclasses from Figure. The first is Rectangle and the second is Triangle. Each of these subclasses overrides area( ) so that it returns the area of a rectangle and a triangle.
+//Write a program to create a superclass called Figure that stores the dimensions of a two-dimensional object. It also defines a method called area( ) that computes the area of an object. The program derives two subclasses from Figure. The first is Rectangle and the second is Triangle. Each of these subclasses overrides area( ) so that it returns the area of a rectangle and a triangle.
 
 import java.util.*;
 class Figure
