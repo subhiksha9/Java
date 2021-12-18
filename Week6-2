@@ -35,7 +35,7 @@ class Exam extends Department
 		return true;
 	}
 }
-public class Practical20
+public class Practical
 {
 	public static void main(String[] args)
 	{
