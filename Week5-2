@@ -1,0 +1,49 @@
+//ii. Write a program to create a superclass called Figure that stores the dimensions of a two-dimensional object. It also defines a method called area( ) that computes the area of an object. The program derives two subclasses from Figure. The first is Rectangle and the second is Triangle. Each of these subclasses overrides area( ) so that it returns the area of a rectangle and a triangle.
+
+import java.util.*;
+class Figure
+{
+int l,w;
+Figure(int x,int y)
+	{
+		l=x;
+		w=y;
+	}
+void area()
+       {
+       		 System.out.println("Area of the Figure");
+       }
+}
+class Triangle extends Figure
+{
+	Triangle(int b, int h)
+	{
+        	super(b, h);
+        }
+
+void area()
+	{
+		System.out.println("Area of triangle " + (l * w) / 2);
+	}
+}
+class Rectangle extends Figure
+{
+            Rectangle(int k,int l)
+            {
+                        super(k,l);
+            }
+            void area()
+            {
+                        System.out.println("Area of rectangle is "+l*w);
+            }
+}
+class A
+{
+            public static void main(String args[])
+        {
+            Rectangle obj1 = new Rectangle(20, 20);
+	    obj1.area();
+	    Triangle obj2 = new Triangle(20, 20);
+	    obj2.area();
+        }
+}
