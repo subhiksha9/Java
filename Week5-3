@@ -1,1 +1,73 @@
 //Write a Java Program to demonstrate a final keyword
+import java.util.*;
+class final_variable
+{
+	final int a=10;
+	void display()
+	{
+		a=20;
+		System.out.println(a);
+	}
+}
+class A
+{
+	final void run()
+	{
+		System.out.println("This is classA run() method");
+	}
+}
+class B extends A
+{
+	void run()
+	{
+		System.out.println("This is class B run() method");
+	}
+}
+final class C
+{
+	void run1()
+	{
+		System.out.println("This is class C run1() method");
+	}
+}
+class D extends C
+{
+	void run2()
+	{
+		System.out.println("This is class D run2() method");
+	}
+}
+class final1
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int ch;
+		a:
+		while(true)
+		{
+			System.out.println("Enter your choice:\n1.final variable\n2.final method\n3.final class");
+			ch=sc.nextInt();
+			switch(ch)
+			{
+				case 1:System.out.println("To demonstrate final variable");
+			            	             final_variable v=new final_variable();
+			           	             v.display();
+			          	             break;
+				case 2:System.out.println("To demonstrate final method");
+			             	             B m=new B();
+			                                m.run();
+			                                break;
+				case 3:System.out.println("To demonstrate final class");
+			             	             C c=new C();
+			             	             c.run1();
+			             	             D d=new D();
+			             	             d.run1();
+			             	             d.run2();
+			             	             break;
+				case 4:System.out.println("To exit");
+			            	             break a;
+			}
+		}
+	}
+}
