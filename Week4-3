@@ -1,1 +1,71 @@
+import java.util.*;
+class employee
+{
+	String name;
+	int id;
+	double salary;
+	void read_emp()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter name of the employee:");
+		name=sc.nextLine();
+		System.out.println("Enter employee id: ");
+		id=sc.nextInt();
+		System.out.println("Enter the employee salary: ");
+		salary=sc.nextDouble();
+	}
+}
+class permanent_employee extends employee
+{
+	void print_emp()
+	{
+		super.read_emp();
+		salary=salary+0.05*salary;
+		System.out.println("Permanent employee");
+		System.out.println("name : "+name);
+		System.out.println("id: "+id);
+		System.out.println("final salary of the permanent employee : "+salary);
+				
+	}
+}
+class temporary_employee extends employee
+{
+	void print_emp()
+	{
+		super.read_emp();
+		salary=salary+0.035*salary;
+		System.out.println("Temporary employee");
+		System.out.println("name : "+name);
+		System.out.println("id: "+id);
+		System.out.println("final salary of the temporary employee : "+salary);
+	}
+}
+class employeeedemo
+{	
+	public static void main(String args[])
+	{
+	Scanner sc1=new Scanner(System.in);
+	int ch;
+	m:
+	while(true)
+	{
+		System.out.println("Enter your choice:\n 1.Permanent employee\n 2.Temporary employee\n 3.Exit");
+		ch=sc1.nextInt();
+		switch(ch)
+		{
+			case 1:System.out.println("To obtain permanent employee details");
+			             permanent_employee pe=new permanent_employee();
+			             pe.print_emp();
+			             break;
+			case 2:System.out.println("To obtain temporary employee details");
+			             temporary_employee te=new temporary_employee();
+			             te.print_emp();
+			             break;
+			case 3:System.out.println("exit");
+			             break m;
 
+		}
+	}
+	}
+}
+				
