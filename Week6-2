@@ -1,64 +1,139 @@
 //Write a java program to find the details of the students eligible to enroll for the examination ( Students, Department combinedly give the eligibility criteria for the enrollement class) using interfaces.
 
 
-
 import java.util.*;
+
 interface students
+
 {
-void getvalue();
+
+	void getvalue();
+
 }
+
 interface Department
+
 {
-void getattendense();
+
+	void getattendance();
+
 }
+
 class exam implements students,Department
+
 {
-int sno,attendense,c;
-String name;
-Scanner s=new Scanner(System.in);
+
+	int sno,attendance,c;
+
+	String name;
+	
+Scanner sc=new Scanner(System.in);
+	
 public void getvalue()
+	
 {
+		
 System.out.println("enter sno:");
-sno=s.nextInt();
+		
+sno=sc.nextInt();
+		
 System.out.println("enter name of the student:");
-name=s.next();
-System.out.println("enter class of the student:");
-c =s.nextInt();
+		
+name=sc.next();
+
+		System.out.println("enter class of the student:");
+
+		c =sc.nextInt();
+	
 }
-public void getattendense()
+	
+public void getattendance()
+	
 {
+		
 System.out.println("enter sno:");
-sno=s.nextInt();
-System.out.println("enter attendense of the student:");
-attendense=s.nextInt();
+		
+sno=sc.nextInt();
+		
+System.out.println("enter attendance of the student:");
+
+		attendance=sc.nextInt();
+	
 }
-void calattendense()
-{
-System.out.println("the attendense of the student is "+attendense+"%");
+	
+void calattendance()
+
+	{
+		
+System.out.println("the attendance of the student is "+attendance+"%");
+	
 }
+	
 void booleligible()
+	
 {
-if (attendense <80)
-{
+
+		if (attendance <60)
+
+		{
+			
 System.out.println("false");
+		
 }
+		
 else
+		
 {
-System.out.println("true");
+	
+		System.out.println("true");
+		
 }
+	
 }
+
 }
-class week62
+
+class examDemo
 {
-public static void main(String args[])
+
+	public static void main(String args[])
+	
 {
-exam o=new exam();
-o.getvalue();
-o.getattendense();
-o.calattendense();
-o.booleligible();
+	
+		int n,i;
+		Scanner sc1=new Scanner(System.in);
+		System.out.println("Enter the number of students: ");
+		n=sc1.nextInt();
+		exam[] e=new exam[n];
+		for(i=0;i<n;i++)
+		{
+			System.out.println("Sno : "+(i+1));
+			e[i]=new exam();
+			e[i].getvalue();
+			e[i].getattendance();
+		}
+		for(i=0;i<n;i++)
+		{
+			System.out.println("Sno : "+(i+1));
+			e[i]=new exam();
+			e[i].calattendance();
+			e[i].booleligible();
+		}
+	}
 }
-}
+		
+OUTPUT:
+
+		
+		
+		
+		
+		
+		
+		
+
+
+
 
 OUTPUT
 enter sno:
