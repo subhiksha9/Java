@@ -1,3 +1,7 @@
+iii.	Write a java program for the following: employee is the parent class which is common for all the sub or child classes both the permanent_employee class and temporary_employee class. Use the read_emp() method in employee class which reads the name, id and salary. And use the print_emp() method in both permanent_employee class and temporary_employee class which prints the details of name ,id and incremented salary details.(if employee is temporary then increment the salary  3.5% of the given salary and if employee is permanent then increment the  salary 5% of the given salary).
+
+
+
 import java.util.*;
 class employee
 {
