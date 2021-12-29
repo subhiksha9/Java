@@ -1,1 +1,50 @@
 //Write a Java Program to compute the area of “room”, using method overloading. (Area of room=length X Breadth) (Consider method with no parameters,method with single parameter and method with two parameters).
+
+
+
+import java.util.*;
+class Room
+{
+	double length;
+	double breadth;
+	double area;
+	void roomArea()
+	{
+		length=10;
+		breadth=20;
+		area=length*breadth;
+		System.out.println("No parameters passed");
+		System.out.println("Area of the room : "+area);
+	}
+	void roomArea(double x)
+	{
+		length=breadth=x;
+		area=length*breadth;
+		System.out.println("One parameter passed");
+		System.out.println("Area of the room : "+area);
+	}
+	void roomArea(double l,double b)
+	{
+		length=l;
+		breadth=b;
+		area=length*breadth;
+		System.out.println("Two parameters passed");
+		System.out.println("Area of the room : "+area);
+	}
+}
+class MethodOverLoading
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		Room r=new Room();
+		System.out.println("Enter One parameter to caluculate area of the room:");
+		double x=sc.nextDouble();
+		System.out.println("Enter Two parameters to caluculate area of the room:");
+		double l=sc.nextDouble();
+		double b=sc.nextDouble();
+		r.roomArea();
+		r.roomArea(x);
+		r.roomArea(l,b);
+	}
+}
