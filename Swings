@@ -1,0 +1,276 @@
+
+import javax.swing.*;
+import java.util.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+class JTreeExample
+{
+JFrame f;
+ 
+JTreeExample()
+{
+f=new JFrame();
+ 
+DefaultMutableTreeNode country,state,ut,punjab,up,goa,ap,yanam,delhi;
+country = new DefaultMutableTreeNode("country");
+state = new DefaultMutableTreeNode("state");
+ut = new DefaultMutableTreeNode("ut");
+ 
+country.add(state);
+country.add(ut);
+ 
+punjab = new DefaultMutableTreeNode("punjab");
+up= new DefaultMutableTreeNode("up");
+goa = new DefaultMutableTreeNode("goa");
+ap = new DefaultMutableTreeNode("ap");
+ 
+state.add(punjab);
+state.add(up);
+state.add(goa);
+state.add(ap);
+ 
+yanam = new DefaultMutableTreeNode("yanam");
+delhi = new DefaultMutableTreeNode("delhi");
+ 
+ut.add(yanam);
+ut.add(delhi);
+ 
+JTree jt = new JTree(country);
+f.add(jt);
+f.setSize(400,400);
+f.setVisible(true);
+}
+}
+ 
+class JLabelExample
+{
+JLabelExample()
+{
+JFrame f  = new JFrame("frame");
+JLabel l1,l2,l3;
+ 
+l1= new JLabel("K");
+l1.setBounds(20,20,90,100);
+ 
+l2= new JLabel("Siva");
+l2.setBounds(50,50,90,100);
+ 
+l3= new JLabel("Kumar");
+l3.setBounds(90,90,90,100);
+ 
+f.add(l1);
+f.add(l2);
+f.add(l3);
+ 
+f.setSize(400,400);
+f.setLayout(null);
+f.setVisible(true);
+ 
+}
+}
+ 
+class JTableExample
+{
+JFrame f;
+JTableExample()
+{
+f = new JFrame();
+int i,j;
+Scanner sc = new Scanner(System.in);
+System.out.println("enter row size:");
+int r = sc.nextInt();
+System.out.println("enter column size:");
+int c = sc.nextInt();
+ 
+String[][] rows = new String[r][c];
+String[] cols = new String[c];
+System.out.println("enter elements row wise");
+sc.nextLine();
+for(i=0;i<r;i++)
+{
+for(j=0;j<c;j++)
+{
+rows[i][j] = sc.nextLine();
+}
+}
+System.out.println("enter heading elements");
+for(j=0;j<c;j++)
+{
+cols[j] = sc.nextLine();
+}
+JTable jt = new JTable(rows,cols);
+jt.setBounds(30,40,200,300);    
+JScrollPane sp=new JScrollPane(jt);    
+f.add(sp);          
+f.setSize(500,500);
+f.setVisible(true);
+}
+}
+ 
+ 
+ 
+class JCheckBoxExample
+{
+JFrame f;
+JCheckBoxExample()
+{
+f = new JFrame();
+JCheckBox b1,b2,b3;
+b1 = new JCheckBox("andhrapradesh",true);
+b1.setBounds(30,30,150,50);
+ 
+b2 = new JCheckBox("gujarat",true);
+b2.setBounds(70,70,100,50);
+ 
+b3 = new JCheckBox("delhi",true);
+b3.setBounds(110,110,100,50);
+ 
+f.add(b1);
+f.add(b2);
+f.add(b3);
+ 
+f.setSize(500,500);
+f.setLayout(null);
+f.setVisible(true);
+}
+}
+ 
+ 
+ 
+class JComboBoxExample
+{
+JFrame f;
+JComboBoxExample()
+{
+int n,i;
+f = new JFrame();
+Scanner sc = new Scanner(System.in);
+System.out.println("enter no of choices in combo box:");
+n = sc.nextInt();
+String[] ele = new String[n];
+System.out.println("enter elements in combo box:");
+sc.nextLine();
+for(i=0;i<n;i++)
+{
+ele[i] = sc.nextLine();
+}
+JComboBox cb1;
+cb1 = new JComboBox(ele);
+cb1.setBounds(30,30,100,30);
+f.add(cb1);
+f.setLayout(null);
+f.setSize(500,500);
+f.setVisible(true);
+}
+}
+ 
+ 
+class JButtonExample
+{
+JFrame f;
+JButtonExample()
+{
+f = new JFrame();
+JButton b1,b2,b3;
+ 
+b1 = new JButton("python");
+b1.setBounds(30,30,100,20);
+ 
+b2 = new JButton("c");
+b2.setBounds(60,60,100,20);
+ 
+b3 = new JButton("java");
+b3.setBounds(90,90,100,20);
+ 
+f.add(b1);
+f.add(b2);
+f.add(b3);
+f.setLayout(null);
+f.setSize(500,500);
+f.setVisible(true);
+}
+}
+ 
+ 
+class JRadioButtonExample
+{
+JFrame f;
+JRadioButtonExample()
+{
+f = new JFrame();
+JRadioButton rb1,rb2,rb3;
+ 
+rb1 = new JRadioButton("india");
+rb1.setBounds(30,30,100,30);
+ 
+rb2 = new JRadioButton("usa");
+rb2.setBounds(30,60,100,30);
+ 
+rb3 = new JRadioButton("outside");
+rb3.setBounds(30,90,100,30);
+ 
+ButtonGroup bg = new ButtonGroup();
+bg.add(rb1);
+bg.add(rb2);
+bg.add(rb3);
+ 
+f.add(rb1);
+f.add(rb2);
+f.add(rb3);
+ 
+f.setLayout(null);
+f.setSize(500,500);
+f.setVisible(true);
+}
+}
+ 
+ 
+class JScrollBarExample
+{
+JFrame f;
+JScrollBarExample()
+{
+f = new JFrame();
+JScrollBar s;
+s = new JScrollBar();
+s.setBounds(30,50,100,100);
+f.add(s);
+f.setSize(500,500);
+f.setLayout(null);
+f.setVisible(true);
+}
+}
+ 
+class SwingDemo
+{
+public static void main(String args[])
+{
+int ch;
+Scanner sc = new Scanner(System.in);
+while(true)
+{
+System.out.println("\n1-JTree \n2-JLabel \n3-JTable \n4-JCheckBox \n5-JComboBox \n6-JButton \n7-JRadioButton \n8-JScrollBar \n");
+System.out.println("enter choice :\n");
+ch=sc.nextInt();
+switch(ch)
+{
+case 1 :JTreeExample j1 = new JTreeExample();
+break;
+case 2:JLabelExample j2 = new JLabelExample();
+break;
+case 3:JTableExample j3 = new JTableExample();
+break;
+case 4:JCheckBoxExample j4 = new JCheckBoxExample();
+break;
+case 5:JComboBoxExample j5 = new JComboBoxExample();
+break;
+case 6:JButtonExample j6 = new JButtonExample();
+break;
+case 7:JRadioButtonExample j7 = new JRadioButtonExample();
+break;
+case 8:JScrollBarExample j8 = new JScrollBarExample();
+break;
+}
+}
+}
+}
+ 
