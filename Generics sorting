@@ -1,0 +1,95 @@
+class myGen<T extends Comparable<T>>
+
+{
+
+	T[] obj;	myGen(T[] o)
+
+	{
+
+		obj=o;
+
+	}
+
+	T max()
+
+	{
+
+		T v=obj[0];
+
+		for(int i=1;i<obj.length;i++)
+
+		{
+
+			if(v.compareTo(obj[i])<0)
+
+			{
+
+				v=obj[i];
+
+			}
+
+		}
+
+		return v;
+
+	}
+
+	T min()
+
+	{
+
+		T a=obj[0];
+
+		for(int i=0;i<obj.length;i++)
+
+		{
+
+			if(a.compareTo(obj[i])>0)
+
+			{
+
+				a=obj[i];
+
+			}
+
+		}
+
+		return a;
+
+	}
+
+}
+
+class Main
+
+{
+
+	public static void main(String args[]){
+
+		String[] st={"nish","fish","yam","firi"};
+
+		Integer[] it={1,8,0,5,8,3};
+
+		Character[] ch={'u','f','y','r','n'};
+
+		myGen<String> str=new myGen<String>(st);
+
+			myGen<Integer> itr=new myGen<Integer>(it);
+
+				myGen<Character> chr=new myGen<Character>(ch);
+
+				System.out.println("max in string:"+str.max());
+
+				System.out.println("min in string:"+str.min());
+
+				System.out.println("max in integer:"+itr.max());
+
+				System.out.println("min in integer:"+itr.min());
+
+				System.out.println("max in character:"+chr.max());
+
+				System.out.println("min in character:"+chr.min());
+
+	}
+
+}
